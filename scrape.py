@@ -7,9 +7,13 @@ class MySpider(scrapy.Spider):
             # 'https://www.linkedin.com/jobs/search?keywords=Frontend+Developer&location=Brazil&geoId=&position=1&pageNum=0c']
     
     def parse(self, response):
-        # titulo = response.css('.jobs-search__results-list').get()
-        titulo = response.css('.google-auth').get()
-        print(titulo)
+        # jobs = response.css('.base-card').getall()
+        jobs = response.css('.base-card')
+        # with open("results", "w") as f:
+        #     f.write(''.join(titulo))
+        # print(titulo)
+        for job in jobs:
+            print(job.xpath('./div/h3/text()').get())
         
 if __name__ == '__main__':
     from scrapy.crawler import CrawlerProcess

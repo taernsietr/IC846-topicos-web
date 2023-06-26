@@ -3,6 +3,8 @@
 O projeto consiste em pegar vagas (publicamente disponíveis) do Linkedin e
 disponibilizá-las em outra interface. 
 
+**NOTA:** O projeto está sendo feito dentro de um venv.
+
 ## Próximos passos
 - Escrever o script pra pegar uma busca no linkedin
 - Alterar pra pegar várias
