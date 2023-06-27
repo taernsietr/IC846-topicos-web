@@ -5,6 +5,10 @@ disponibilizá-las em outra interface.
 
 **NOTA:** O projeto está sendo feito dentro de um venv.
 
+## Módulos Utilizados
+
+- scrapy
+
 ## Próximos passos
 - [x] Escrever o script pra pegar uma busca no linkedin
 - [x] Transformar cada busca em dados armazenados (json, csv, etc)
