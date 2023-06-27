@@ -6,7 +6,9 @@ disponibilizá-las em outra interface.
 **NOTA:** O projeto está sendo feito dentro de um venv.
 
 ## Próximos passos
-- Escrever o script pra pegar uma busca no linkedin
-- Alterar pra pegar várias
-- Transformar cada busca em dados armazenados (json, csv, etc)
-- Visualizar (mapa de calor)
+- [x] Escrever o script pra pegar uma busca no linkedin
+- [x] Transformar cada busca em dados armazenados (json, csv, etc)
+- [ ] Ampliar busca para retornar mais vagas
+- [ ] Alterar pra pegar várias buscas simultaneamente
+- [ ] Escapar strings retornadas com vírgula (considerando o retorno em CSV)
+- [ ] Visualizar (mapa de calor)

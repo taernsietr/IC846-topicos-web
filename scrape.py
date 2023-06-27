@@ -12,8 +12,20 @@ class MySpider(scrapy.Spider):
         # with open("results", "w") as f:
         #     f.write(''.join(titulo))
         # print(titulo)
-        for job in jobs:
-            print(job.xpath('./div/h3/text()').get())
+        with open("results.csv", "w") as results:
+            results.write('Title,Publisher,Location,Time Posted\n')
+            for job in jobs:
+                title = job.xpath('./div/h3/text()').get().strip()
+
+                publisher = job.xpath('./div/h4/a/text()')
+                if not publisher:
+                    publisher = job.xpath('./div/h4/text()')
+                publisher = publisher.get().strip()
+
+                location = job.xpath('./div/div/span/text()').get().strip()
+                time_posted = job.xpath('./div/div/time/@datetime').get().strip()
+                results.write(f'{title},{publisher},{location},{time_posted}\n')
+                # print(f'title: {title}\npublisher: {publisher}\nlocation: {location}\nposted on: {time_posted}')
         
 if __name__ == '__main__':
     from scrapy.crawler import CrawlerProcess
