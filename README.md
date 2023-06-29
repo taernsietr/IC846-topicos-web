@@ -3,7 +3,7 @@
 O projeto consiste em pegar vagas (publicamente disponíveis) do Linkedin e
 disponibilizá-las em outra interface. 
 
-**NOTA:** O projeto está sendo feito dentro de um venv.
+O projeto está sendo feito dentro de um venv. 
 
 ## Módulos Utilizados
 
