@@ -1,40 +1,40 @@
 import re, nltk
 from unidecode import unidecode
 
-nltk.download('rslp')
+# nltk.download('rslp')
 
 with open('texto-task-3.txt') as f:
     texto = f.read()
 
 # 1. Tudo para maiusculas
 
-uppercase = texto.upper()
-print(uppercase)
+# uppercase = texto.upper()
+# print(uppercase)
 
 # 2. Tudo para minusculas
 
-lowercase = texto.lower()
-print(lowercase)
+# lowercase = texto.lower()
+# print(lowercase)
 
 # 3. Remover pontuacoes
 
-nopunct = re.sub('[\S\W]', '', texto)
-print(nopunct)
+# nopunct = re.sub('[\S\W]', '', texto)
+# print(nopunct)
 
 # 4. Remover acentuacao grafica
 
-noaccents = unidecode(texto)
-print(noaccents)
+# noaccents = unidecode(texto)
+# print(noaccents)
 
 # 5. Dividir entre frases
 
-sentences = re.split('[\?\.!]+\s', texto)
-print(sentences)
+# sentences = re.split('[\?\.!]+\s', texto)
+# print(sentences)
 
 # 6. Dividir entre paragrafos
 
-paragraphs = texto.readlines()
-print(paragraphs)
+# paragraphs = texto.readlines()
+# print(paragraphs)
 
 # 7. Remover stopwords
 
@@ -43,27 +43,36 @@ stopwords = stopwords.split(', ')
 
 def prepare(input):
    tokens = input.lower()
-   tokens = re.sub('[\S\W]', '', tokens)
-   tokens = tokens.split()
+   tokens = re.sub('[()]', '', tokens)
+   tokens = re.sub('[^\s\w]+\s', ' ', tokens)
+   return tokens.split()
 
-texto = prepare(texto)
-tokens = [word for word in texto if word not in stopwords]
+print(texto)
+print('\n')
+texto_lista = prepare(texto)
+tokens = [word for word in texto_lista if word not in stopwords]
+print(tokens)
+print('\n')
 
 # 8. _Stemming_ - encontrar o radical das palavras
 
-stemmer = nltk.RSLPStemmer()
-tokens = map(stemmer.stem(), tokens)
+# stemmer = nltk.RSLPStemmer()
+# tokens = map(stemmer.stem, tokens)
+# print(list(tokens))
 
 # 9. _Lemmatization_ formas flexionadas da mesma palavra
 
 # 10. Achar e separar hashtags e URLs
 
-hashtags = re.matchall('https?://\S+(\.\S+)+', texto)
-urls = re.matchall('#\w+[\s\.\n]', texto)
+hashtags = re.findall('https?://\S+(\.\S+)+', texto)
+urls = re.findall('#\w+[\s\.\n]', texto)
+# 
+# print(f'HASHTAGS: {hashtags}') 
+# print(f'URLS: {urls}') 
 
 # 11. Achar e remover hashtags e URLs
 
-delinked = re.remove('#\w+[\s\.\n]', texto)
+# delinked = re.remove('#\w+[\s\.\n]', texto)
 
 # 12. A forma em que os exercicios foram dispostos e a melhor? Ordem seguiria?
 

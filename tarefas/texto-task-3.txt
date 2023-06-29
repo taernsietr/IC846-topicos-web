@@ -1,0 +1,4 @@
+Criando algum texto para pré-processar.
+O português é cheio de diferenças. Temos cedilha, temos assento e acento, temos tio tião.
+Uma linha nem sempre é uma frase. Pode ser uma oração, pode ser um parágrafo.
+Na rural (http://ufrrj.br) temos muitos cursos, mas @sistemasdeinformacao é especial. Pode procurar no google (https://www.google.com) que você verá a trending #si_rural. Ok, não tem nada, mas talvez #sistemasdeinformacao tenha alguma coisa. Não quer dizer que seja da Rural, mas é nóis de alguma forma!!!
