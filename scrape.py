@@ -1,9 +1,14 @@
 import scrapy
+import sys
 
 class MySpider(scrapy.Spider):
     name = 'linkedinextractor'
     # TODO: parametrizar busca e iterar mais resultados
-    start_urls = ['https://www.linkedin.com/jobs/search?keywords=Desenvolvedor&location=Brazil&geoId=&position=1&pageNum=0c']
+
+    if len(sys.argv) == 1: 
+        sys.exit() 
+    arg = sys.argv[1].replace(" ","+")
+    start_urls = [f'https://www.linkedin.com/jobs/search?keywords={arg}&location=Brazil&geoId=&position=1&pageNum=0c']
             # 'https://www.linkedin.com/jobs/search?keywords=Desenvolvedor&location=Brazil&geoId=&position=1&pageNum=0c',
             # 'https://www.linkedin.com/jobs/search?keywords=Frontend+Developer&location=Brazil&geoId=&position=1&pageNum=0c']
     
@@ -32,6 +37,7 @@ class MySpider(scrapy.Spider):
 if __name__ == '__main__':
     from scrapy.crawler import CrawlerProcess
     
+
     process = CrawlerProcess()
     process.crawl(MySpider)
     process.start()
