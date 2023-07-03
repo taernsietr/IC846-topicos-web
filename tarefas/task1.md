@@ -1,0 +1,3 @@
+## Mensagem enviada na tarefa do SIGAA
+
+Estou enviando dois arquivos 1 - "tarefa_web(1-5).gephi" relativo as questões 1, 2, 3, 4 e 5. Os nós em amarelo tem a centralidade local maior que 4. O nó com maior centralidade global está em verde. A questão 5 estou com grande dificuldade de realizar, creio que possa estar errada. 2- "tarefa_web(6).gephi" relativo a questão 6. Defini a cor vermelha para o nó que obteve um maior número de influência com base no valor de PageRank. Observei os valores de pageRank através da tabela "Data Laboratory".
