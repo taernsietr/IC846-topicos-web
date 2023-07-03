@@ -20,16 +20,19 @@ while True:
     initialScroll = finalScroll
     finalScroll += 1000
 
-    # Tempo para carregar os dados
+    # Tempo para carregar os dados do scroll
     time.sleep(3)
 
     end = time.time()
     # print(f'start: {start}, end: {end}')
+
+    #Definir um tempo para ele scrollar até chegar no botão
     if round(end - start) > 10:
         break
+    driver.close()
 
 src = driver.page_source
 soup = BeautifulSoup(src, 'lxml')
-intro = soup.find('div', {'class': 'jobs-search__results-list'})
+intro = soup.find('ul', {'class': 'jobs-search__results-list'})
 print(intro)
     
