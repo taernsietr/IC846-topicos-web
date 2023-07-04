@@ -24,15 +24,28 @@ while True:
     time.sleep(3)
 
     end = time.time()
-    # print(f'start: {start}, end: {end}')
+    print(f'start: {start}, end: {end}')
 
     #Definir um tempo para ele scrollar até chegar no botão
-    if round(end - start) > 10:
+    if round(end - start) > 5:
         break
-    driver.close()
+
+    #Checa se o botão está visível e, se positivo, clica nele
+    if driver.find_element(By.CLASS_NAME, 'infinite-scroller__show-more-button').is_displayed():
+        driver.find_element(By.CLASS_NAME, 'infinite-scroller__show-more-button').click()
 
 src = driver.page_source
 soup = BeautifulSoup(src, 'lxml')
-intro = soup.find('ul', {'class': 'jobs-search__results-list'})
-print(intro)
-    
+
+jobs_info = soup.find_all('div', {'class': 'base-search-card__info'}) 
+jobs = []
+for job in jobs_info:
+    publisher = job.find('a', {'class' : 'hidden-nested-link'}).text.strip()
+    if not publisher:
+        publisher = job.find('h4').text.strip() 
+
+    # Adicionar localização e tempo de postagem. (Achar um jeito de pegar o texto dentro de uma span)
+    jobs.append((job.find('h3').text.strip(), job.find('h4').text.strip()))
+
+print(jobs)
+driver.close()
