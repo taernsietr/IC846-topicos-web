@@ -1,10 +1,10 @@
-## Webscraping no Linkedin
+# Webscraping no Linkedin
 
 O projeto consiste em pegar vagas (publicamente disponíveis) do Linkedin por
 webscraping e gerar um mapa de calor com as vagas a partir de que estado estão
 disponibilizadas. Possivelmente, serão feitas outras análises também. 
 
-### Execução 
+## Instalação
 
 O projeto está sendo feito dentro de um venv. É possível rodar sem utilizá-lo,
 mas isso traz o risco de atrapalhar a instalação do sistema, sobretudo em
@@ -18,7 +18,7 @@ python -m venv .
 # interpretador (ex.: `C:\Python3\python`).  
 ```
 
-Em seguida, será necessário ativar o `venv` Utilize o comando correspondente 
+Em seguida, será necessário ativar o `venv`. Utilize o comando correspondente 
 ao seu sistema/shell:  
 
 ```bash
@@ -34,7 +34,16 @@ E finalmente, instale os pacotes necessários:
 pip install selenium bs4 matplotlib numpy pandas geopandas
 ```
 
-### Próximos passos
+## Execução
+
+Será necessário primeiro rodar `python scrape.py "<nome-da-vaga>". Se a vaga
+desejada possuir espaços (por exemplo, "engenheiro civil"), insira-a entre
+aspas duplas. Não inserir uma vaga retornará um erro, e vagas adicionais serão
+ignoradas na versão atual.  
+
+Após gerar o `results.csv`, rode `python heatmap.py` para gerar o mapa de calor. 
+
+## Próximos passos
 
 - [x] Escrever o script pra pegar uma busca no linkedin
 - [x] Transformar cada busca em dados armazenados (json, csv, etc)
@@ -42,5 +51,6 @@ pip install selenium bs4 matplotlib numpy pandas geopandas
 - [x] Ampliar busca para retornar mais vagas
 - [x] Escapar strings retornadas com vírgula (considerando o retorno em CSV)
 - [x] Visualizar (mapa de calor)
+- [ ] Parametrizar tempo de scraping
 - [ ] Alterar pra pegar várias buscas simultaneamente no csv
 - [ ] Refinar mapa de calor

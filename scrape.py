@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 import time
 import sys
 
-TIME_TO_RUN = 5 
+TIME_TO_RUN = 10
 
 if len(sys.argv) == 1: 
     print("É necessário informar pelo menos uma palavra para que a busca seja feita. O script será encerrado agora.")
