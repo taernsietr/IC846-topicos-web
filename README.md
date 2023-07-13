@@ -33,17 +33,18 @@ E finalmente, instale os pacotes necessários. Caso esteja utilizando um venv,
 rode o primeiro comando, senão, instale os pacotes diretamente:  
 ```bash
 python -m pip install -r requirements.txt
-pip install selenium bs4 matplotlib numpy pandas geopandas
+pip install selenium matplotlib numpy pandas geopandas
 ```
 
 ## Execução
 
-Será necessário primeiro rodar `python scrape.py "<nome-da-vaga>". Se a vaga
+Execute `python main.py "\<nome-da-vaga\> \[tempo_scrolling\]". Se a vaga
 desejada possuir espaços (por exemplo, "engenheiro civil"), insira-a entre
-aspas duplas. Não inserir uma vaga retornará um erro, e vagas adicionais serão
-ignoradas na versão atual.  
+aspas duplas. Não inserir uma vaga ou inserir vagas adicionais retornará um 
+erro na versão atual.  
 
-Após gerar o `results.csv`, rode `python heatmap.py` para gerar o mapa de calor. 
+`tempo_scrolling` corresponde ao tempo que o script irá avançar o scroll 
+infinito da página antes de coletar os resultados.  
 
 ## Próximos passos
 
@@ -53,6 +54,7 @@ Após gerar o `results.csv`, rode `python heatmap.py` para gerar o mapa de calor
 - [x] Ampliar busca para retornar mais vagas
 - [x] Escapar strings retornadas com vírgula (considerando o retorno em CSV)
 - [x] Visualizar (mapa de calor)
-- [ ] Parametrizar tempo de scraping
+- [x] Parametrizar tempo de scraping
 - [ ] Alterar pra pegar várias buscas simultaneamente no csv
-- [ ] Refinar mapa de calor
+- [ ] Corrigir valores inválidos no .csv
+- [ ] Refinar mapa de calor (especialmente cor de resultados zero)
