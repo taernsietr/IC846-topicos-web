@@ -1,0 +1,6 @@
+numpy
+pandas
+matplotlib
+bs4
+selenium
+geopandas

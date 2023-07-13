@@ -29,8 +29,10 @@ source ./bin/activate.csh  # csh
 .\Scripts\activate.bat     # Windows (cmd.exe)
 ```
 
-E finalmente, instale os pacotes necessários:  
+E finalmente, instale os pacotes necessários. Caso esteja utilizando um venv,
+rode o primeiro comando, senão, instale os pacotes diretamente:  
 ```bash
+python -m pip install -r requirements.txt
 pip install selenium bs4 matplotlib numpy pandas geopandas
 ```
 
